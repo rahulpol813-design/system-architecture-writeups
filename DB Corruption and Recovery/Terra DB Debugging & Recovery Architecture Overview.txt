@@ -42,3 +42,38 @@
 |  |    successful[cite: 46].                                                   |  |
 |  +-----------------------------------------------------------------------------+  |
 +-----------------------------------------------------------------------------------+
+
+---
+
+## Bibliography
+
+[24] Scenario classification: Invisible patient data — corrupted records causing silent retrieval failures.
+
+[32] Diagnostic capability: Bypass standard tooling to parse raw binary state of corrupted databases.
+
+[33] Diagnostic capability: Parse corrupted binary files without standard tool limitations.
+
+[34] Custom fault-tolerant viewer: Engineered offline diagnostic tool designed for corrupted database inspection.
+
+[35] Diagnostic capability: Safe parsing of binary state despite data corruption.
+
+[36] Data recovery methodology: Reconstruct proprietary Patient-Study-Series-Image (P-S-S-I) binary tree hierarchy from corrupted state.
+
+[38] Recovery mechanism: Verify private DICOM tags to determine explicit user-initiated deletion vs. corruption.
+
+[39] Integrity verification: Cross-validate P-S-S-I tree structure against physical drive data.
+
+[40] Recovery action: Programmatically flip corrupted display flags to restore active record visibility.
+
+[41] Scenario classification: Severed binary linkages — orphaned image files with broken database references.
+
+[42] Recovery mechanism: Automated batch pipeline for re-ingesting orphaned images into TerraDB.
+
+[43] Scenario classification: Fatal recovery logic flaw — destructive loss of critical state markers during recovery operations.
+
+[45] Root cause identification: Legacy recovery routine destructively deletes backup markers on recovery failure.
+
+[46] Transactional redesign: Rewritten recovery logic ensuring marker backups remain intact until successful DB state verification.
+
+---
+See terra-db-corruption-postmortem.md for complete unified bibliography including professional profile and case study details.

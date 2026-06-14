@@ -46,18 +46,93 @@ Refer [Terra DB Debugging & Recovery Architecture Overview.txt](Terra%20DB%20Deb
 
 ---
 
-## Additional Engineering Highlights
+## Bibliography
 
-### AI-Powered Non-Human Identity (NHI) Threat Detection
-* [cite_start]Architected an end-to-end AI-driven behavioral analytics platform for detecting anomalous machine identity activities[cite: 79].
-* [cite_start]Designed a distributed event-driven architecture utilizing FastAPI, Kafka, and PostgreSQL for large-scale telemetry ingestion[cite: 80].
-* [cite_start]Implemented real-time event streaming using cloud-hosted Kafka infrastructure with secure SSL/TLS authentication[cite: 81].
+### Architecture & Diagnostic Framework (Citations 24, 32–46)
+*References from "Terra DB Debugging & Recovery Architecture Overview"*
 
-### Distributed Radiology Triage Platform (AegisRad-AI)
-* [cite_start]Built scalable backend services using Python, FastAPI, Redis, Kafka, Docker, AsyncIO, and WebSockets to enable real-time study processing pipelines[cite: 82].
-* [cite_start]Engineered a study lifecycle management system featuring state machines, timeline tracking, and priority routing[cite: 83].
+[24] Scenario classification: Invisible patient data — corrupted records causing silent retrieval failures.
 
-### Legacy Modernization & Performance Tuning
-* [cite_start]Revitalized a 20-year-old legacy project on Linux by creating debuggable modules, resolving year-old issues within days[cite: 84].
-* [cite_start]Optimized product memory management for legacy environments operating under strict 4–6 GB system memory constraints[cite: 85].
-* [cite_start]Developed critical server features to capture 20 minutes of event data and managed shared memory across MFC applications for seamless IPC[cite: 86].
+[32] Diagnostic capability: Bypass standard tooling to parse raw binary state of corrupted databases.
+
+[33] Diagnostic capability: Parse corrupted binary files without standard tool limitations.
+
+[34] Custom fault-tolerant viewer: Engineered offline diagnostic tool designed for corrupted database inspection.
+
+[35] Diagnostic capability: Safe parsing of binary state despite data corruption.
+
+[36] Data recovery methodology: Reconstruct proprietary Patient-Study-Series-Image (P-S-S-I) binary tree hierarchy from corrupted state.
+
+[38] Recovery mechanism: Verify private DICOM tags to determine explicit user-initiated deletion vs. corruption.
+
+[39] Integrity verification: Cross-validate P-S-S-I tree structure against physical drive data.
+
+[40] Recovery action: Programmatically flip corrupted display flags to restore active record visibility.
+
+[41] Scenario classification: Severed binary linkages — orphaned image files with broken database references.
+
+[42] Recovery mechanism: Automated batch pipeline for re-ingesting orphaned images into TerraDB.
+
+[43] Scenario classification: Fatal recovery logic flaw — destructive loss of critical state markers during recovery operations.
+
+[45] Root cause identification: Legacy recovery routine destructively deletes backup markers on recovery failure.
+
+[46] Transactional redesign: Rewritten recovery logic ensuring marker backups remain intact until successful DB state verification.
+
+### Professional Profile & Expertise (Citations 51–61)
+
+[51] Professional profile and distributed systems development expertise.
+
+[52] Career experience in real-time, high-performance enterprise application architecture.
+
+[53] Technical specialization in C++11/14/17, multithreading, TCP/IP socket programming, and Linux systems.
+
+[54] Expertise in legacy system modernization and build framework migration (Make to CMake).
+
+[55] Binary-level debugging and data corruption investigation in critical healthcare systems.
+
+[56] Event-driven architecture design with FastAPI, Kafka, PostgreSQL, and Redis.
+
+[58] Systems programming languages and APIs: C++11/14/17, C#.Net, Java, Python, Win32 API, MFC.
+
+[59] Network and I/O technologies: TCP/IP socket programming, shared memory IPC, multithreading.
+
+[60] Distributed systems technologies: Kafka, Redis, FastAPI, PostgreSQL, RabbitMQ.
+
+[61] Development tooling and OS platforms: Linux, WSL 2.0, CMake, GTest, Git, Docker.
+
+### Case Study: Terra DB Corruption & Recovery (Citations 62–78)
+
+[62] Postmortem case study: Silent binary corruption and data loss in legacy Terra DB storage engine.
+
+[63] Impact analysis: Silent data corruption in PACS system causing invisible patient data loss.
+
+[64] Clinical consequences: Unnecessary patient radiation exposure due to required diagnostic rescans.
+
+[65] Systemic failure: Loss of critical state markers in export tracking for distributed systems.
+
+[66] Root cause assessment: Previous debugging approach relied on guesswork without addressing underlying issues.
+
+[67] Technical challenge: Standard diagnostic tools unable to parse corrupted database state.
+
+[68] Solution architecture: Custom fault-tolerant TerraDB offline viewer development.
+
+[69] Implementation detail: Safe binary file reading without crashes on corrupted data.
+
+[70] Analysis methodology: Mapping failure points in Patient-Study-Series-Image (P-S-S-I) binary tree hierarchy.
+
+[71] Verification approach: Cross-referencing corrupted DB against DICOM files using private deletion tags.
+
+[72] Integrity validation: P-S-S-I tree verification against physical disk data.
+
+[73] Recovery technique: Programmatic correction of corrupted display flags to restore patient histories.
+
+[74] Batch processing: Automated pipelines for recovering orphaned images without patient rescans.
+
+[75] Root cause analysis: Critical logic flaw identified in legacy DB recovery routine affecting export markers.
+
+[76] Transactional safeguard: Rewritten recovery logic ensuring marker backup integrity and isolation.
+
+[77] Outcome validation: Elimination of patient rescans due to DB failures, reducing unnecessary radiation exposure.
+
+[78] Final achievement: Zero data loss through protection of critical clinical state markers from legacy recovery routines.
