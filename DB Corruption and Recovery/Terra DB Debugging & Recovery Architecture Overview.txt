@@ -1,0 +1,44 @@
++-----------------------------------------------------------------------------------+
+|                           LEGACY PACS ENVIRONMENT                                 |
+|                                                                                   |
+|  +--------------------+       +------------------------------------------------+  |
+|  | Corrupted Terra DB |       |         Physical Drive (Raw DICOM Files)       |  |
+|  | (Binary Files)     |       |                                                |  |
+|  +---------+----------+       +-----------------------+------------------------+  |
+|            |                                          |                           |
++------------|------------------------------------------|---------------------------+
+             |                                          |
+             v                                          v
++-----------------------------------------------------------------------------------+
+|                     CUSTOM FAULT-TOLERANT VIEWER [cite: 34]                       |
+|                                                                                   |
+|  1. Bypass standard tooling & parse raw binary state[cite: 32, 33, 35].          |
+|  2. Reconstruct proprietary P-S-S-I (Patient-Study-Series-Image) Tree[cite: 36]. |
++----------------------------+------------------------------------------------------+
+                             |
+                             v
++-----------------------------------------------------------------------------------+
+|                        DIAGNOSTIC & RECOVERY ENGINE                               |
+|                                                                                   |
+|  +-----------------------------------------------------------------------------+  |
+|  | SCENARIO A: Invisible Patient Data [cite: 24]                               |  |
+|  | -> Check private DICOM tag for explicit user "deletion"[cite: 38].         |  |
+|  | -> If NOT deleted: Verify P-S-S-I tree integrity against drive[cite: 39].  |  |
+|  | -> Action: Programmatically flip corrupted display flags to active[cite: 40]. |  |
+|  +-----------------------------------------------------------------------------+  |
+|                                                                                   |
+|  +-----------------------------------------------------------------------------+  |
+|  | SCENARIO B: Severed Binary Linkages [cite: 41]                              |  |
+|  | -> Raw image files survive on disk, but DB links are broken[cite: 41].     |  |
+|  | -> Action: Trigger Automated Batch Pipelines[cite: 41].                    |  |
+|  | -> Result: Forcefully push/re-ingest orphaned images into TerraDB[cite: 42].  |  |
+|  +-----------------------------------------------------------------------------+  |
+|                                                                                   |
+|  +-----------------------------------------------------------------------------+  |
+|  | SCENARIO C: Fatal Recovery Logic Flaw (Lost State Markers) [cite: 43]       |  |
+|  | -> Legacy system destructively deleted backups on recovery failure[cite: 45]. |  |
+|  | -> Action: Rewrote transactional logic[cite: 46].                          |  |
+|  | -> Result: Marker backups kept strictly intact until DB state is verified   |  |
+|  |    successful[cite: 46].                                                   |  |
+|  +-----------------------------------------------------------------------------+  |
++-----------------------------------------------------------------------------------+
