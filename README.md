@@ -240,16 +240,16 @@ Implement **audit-trail logging at the architectural level** (not as afterthough
 │  │  - Handles Rendering │                 │                     │
 │  │  - Context Switching │        [Async File Drops]             │
 │  └──────────────────────┘         Cryptographic IPC             │
-│           ▲                                                     │
-│           │                                                     │
+│           ▲                               │                     │
+│           │                               │                     │
 │    [Adaptive Memory                ┌─────────────────────┐      │
-│     Optimizer]          ┌──────────►│ Terra DB Engine    │      │
+│     Optimizer]          ┌─────────►│ Terra DB Engine     │      │
 │           │             │          │ (Binary Storage)    │      │
 │           │      [Data Exchange]   └─────────────────────┘      │
 │           │             │                   ▲                   │
 │  ┌────────▼─────────┐   │                   │                   │
 │  │ System RAM       │   │          [Disk I/O Recovery]          │
-│  │ (Tiered Cache)   │───┴──────────────────┤                    │ 
+│  │ (Tiered Cache)   │───┴───────────────────|                   │ 
 │  │                  │                       │                   │
 │  │ ±10 Pre-fetch    │              ┌────────▼──────┐            │
 │  │ Visible Images   │              │ Physical Disk │            │
